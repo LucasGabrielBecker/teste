@@ -1,0 +1,1022 @@
+// 20220713112258
+// https://devsc-auchan.oney.pt/Home/area-cliente/pedidos/Alterar-modalidade-pagamento/alterar-modalidade-pagamento-minhas-compras?sc_device=json
+
+{
+  "name": "alterar-modalidade-pagamento-minhas-compras",
+  "screenType": "Form Step",
+  "style": "",
+  "onLeave": "",
+  "bgImage": "",
+  "modals": [],
+  "components": [
+    {
+      "name": "App Form",
+      "type": "Text",
+      "showIf": "",
+      "bgImage": "",
+      "identifier": null,
+      "style": "",
+      "path": "/app-body/sxa-scrollview/app-main/row-1-2",
+      "contents": {
+        "hidefooterbar": "",
+        "items": [
+          {
+            "container": {
+              "id": "{05DF478E-5328-40C5-8AD0-9D1D9DE02097}",
+              "items": [
+                {
+                  "container": {
+                    "id": "{F024FF52-ABC0-460F-8C45-D07A4D9E5FED}",
+                    "items": [
+                      {
+                        "form text": {
+                          "showif": "",
+                          "style": "fontSize22,bold,marginBottom30",
+                          "text": "ALTERAR MODALIDADE DE PAGAMENTO DAS MINHAS COMPRAS",
+                          "tooltip": ""
+                        }
+                      },
+                      {
+                        "form html text": {
+                          "showif": "",
+                          "style": "noPadding",
+                          "text": "<p>Vai sempre a tempo de reduzir o valor a pagar mensalmente pelas suas compras.<br />\nAltere a modalidade de pagamento para Conta Permanente e pague menos este m&ecirc;s.</p>",
+                          "textstyle": "",
+                          "transformtextaction": "",
+                          "tooltip": ""
+                        }
+                      },
+                      {
+                        "container": {
+                          "id": "{BA89C814-8C2E-4B74-8B1C-39BDF72F94BF}",
+                          "items": [
+                            {
+                              "form html text": {
+                                "showif": "",
+                                "style": "privateArea,noPadding",
+                                "text": "<p>De momento n&atilde;o existem compras dispon&iacute;veis para altera&ccedil;&atilde;o.</p>",
+                                "textstyle": "",
+                                "transformtextaction": "",
+                                "tooltip": ""
+                              }
+                            }
+                          ],
+                          "showif": "function(ctx) {\r\n    return !!ctx.changePayMethod.getFieldValue('_DATA_FETCHED_') && (!ctx.page.data.purchases || !ctx.page.data.purchases.length);\r\n}",
+                          "style": ""
+                        }
+                      }
+                    ],
+                    "showif": "",
+                    "style": ""
+                  }
+                },
+                {
+                  "container": {
+                    "id": "{FC16B6C0-05C9-45B3-9621-4593AB586A20}",
+                    "items": [
+                      {
+                        "container": {
+                          "id": "{FA8B7437-AAB5-4CC4-A09C-BD05DFE9CE85}",
+                          "items": [
+                            {
+                              "form html text": {
+                                "showif": "",
+                                "style": "privateArea,noPadding",
+                                "text": "<span style=\"color: #53565a;\">Verifique o valor em d&iacute;vida em cada modalidade, at&eacute; ao momento.<br />\nPodem existir compras que ainda n&atilde;o est&atilde;o em sistema e que, por isso, n&atilde;o s&atilde;o apresentadas.</span>",
+                                "textstyle": "",
+                                "transformtextaction": "",
+                                "tooltip": ""
+                              }
+                            },
+                            {
+                              "container": {
+                                "id": "{1C327C04-0D41-4A72-B839-7485727C36F0}",
+                                "items": [
+                                  {
+                                    "form tab button": {
+                                      "action": "",
+                                      "hideonclick": "1",
+                                      "identifier": "fim-do-mes",
+                                      "inline styles": "ampTabButton,marginRight",
+                                      "validif": "",
+                                      "showif": "function(ctx) {\n    return !!ctx.changePayMethod.getFieldValue('_EndOfMonth');\n}",
+                                      "activeif": "",
+                                      "hide": "",
+                                      "text": "FIM DO MÊS",
+                                      "style": ""
+                                    }
+                                  },
+                                  {
+                                    "form tab button": {
+                                      "action": "",
+                                      "hideonclick": "1",
+                                      "identifier": "conta-permanente",
+                                      "inline styles": "ampTabButton,marginRight",
+                                      "validif": "",
+                                      "showif": "function (ctx) {\r\n    return true; // !!ctx.changePayMethod.getFieldValue('_PermanentAccount');\r\n}",
+                                      "activeif": "",
+                                      "hide": "",
+                                      "text": "CONTA PERMANENTE",
+                                      "style": ""
+                                    }
+                                  },
+                                  {
+                                    "form tab button": {
+                                      "action": "",
+                                      "hideonclick": "1",
+                                      "identifier": "3x-s-juros",
+                                      "inline styles": "ampTabButton,marginRight",
+                                      "validif": "",
+                                      "showif": "function (ctx) {\r\n    return !!ctx.changePayMethod.getFieldValue('_3xNoFees');\r\n}",
+                                      "activeif": "",
+                                      "hide": "",
+                                      "text": "3X S/ JUROS",
+                                      "style": ""
+                                    }
+                                  },
+                                  {
+                                    "form tab button": {
+                                      "action": "",
+                                      "hideonclick": "1",
+                                      "identifier": "credito-gratuito",
+                                      "inline styles": "ampTabButton,marginRight",
+                                      "validif": "",
+                                      "showif": "function (ctx) {\n    return !!ctx.changePayMethod.getFieldValue('_FreeCredits');\n}",
+                                      "activeif": "",
+                                      "hide": "",
+                                      "text": "CRÉDITO GRATUITO",
+                                      "style": ""
+                                    }
+                                  },
+                                  {
+                                    "form tab button": {
+                                      "action": "",
+                                      "hideonclick": "1",
+                                      "identifier": "credito-leve",
+                                      "inline styles": "ampTabButton",
+                                      "validif": "",
+                                      "showif": "function (ctx) {\n    return !!ctx.changePayMethod.getFieldValue('_LightCredits');\n}",
+                                      "activeif": "",
+                                      "hide": "",
+                                      "text": "CRÉDITO LEVE",
+                                      "style": ""
+                                    }
+                                  }
+                                ],
+                                "showif": "",
+                                "style": "flexRow,marginTop20,bottomBorderSeparator,paddingBottom10"
+                              }
+                            },
+                            {
+                              "form tab container": {
+                                "identifier": "fim-do-mes",
+                                "showif": "",
+                                "style": "",
+                                "items": [
+                                  {
+                                    "container": {
+                                      "id": "{AF881461-7556-4A48-9E07-EADF0F9FE146}",
+                                      "items": [
+                                        {
+                                          "form html text": {
+                                            "showif": "",
+                                            "style": "privateArea,noPadding",
+                                            "text": "<p>Nesta modalidade, o valor em d&iacute;vida &eacute;:</p>",
+                                            "textstyle": "",
+                                            "transformtextaction": "",
+                                            "tooltip": ""
+                                          }
+                                        },
+                                        {
+                                          "container": {
+                                            "id": "{758DB663-1A95-4FFA-A9B8-F233C522D0DE}",
+                                            "items": [
+                                              {
+                                                "form image": {
+                                                  "id": "{0C33A8B4-D0BA-47E8-9793-8AA7C1ECD2DA}",
+                                                  "image": {
+                                                    "fieldType": "image",
+                                                    "style": "",
+                                                    "link": "/-/media/Project/Oney-Sites/Apps/Auchan/Icons/icon-bullet.png?customrev=f953d5aa-6625-4ff1-834a-d50557d85bf4",
+                                                    "guid": "{9E0D9DF7-2992-4F46-B837-06B478C9907E}",
+                                                    "value": "icon-bullet",
+                                                    "width": "7",
+                                                    "height": "7",
+                                                    "mimeType": "image/png"
+                                                  },
+                                                  "style": "greenDot"
+                                                }
+                                              },
+                                              {
+                                                "form html text": {
+                                                  "showif": "",
+                                                  "style": "paddingVertical30",
+                                                  "text": "<p><strong>[value]</strong></p>",
+                                                  "textstyle": "",
+                                                  "transformtextaction": "function(ctx) {\r\n    const value = ctx.changePayMethod.getModalitySum(ctx, '_EndOfMonth');\r\n    return ctx.tokensReplacer(ctx.text, {\r\n        value\r\n    });\r\n}",
+                                                  "tooltip": ""
+                                                }
+                                              }
+                                            ],
+                                            "showif": "",
+                                            "style": "flexRow,alignCenter"
+                                          }
+                                        }
+                                      ],
+                                      "showif": "",
+                                      "style": "paddingTop30,paddingBottom30"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "form tab container": {
+                                "identifier": "conta-permanente",
+                                "showif": "",
+                                "style": "",
+                                "items": [
+                                  {
+                                    "container": {
+                                      "id": "{D7FE59C6-0E45-4D4E-BDA8-2A0E1C09C906}",
+                                      "items": [
+                                        {
+                                          "form html text": {
+                                            "showif": "",
+                                            "style": "privateArea,noPadding",
+                                            "text": "<p>Nesta modalidade, o valor em d&iacute;vida &eacute;:</p>",
+                                            "textstyle": "",
+                                            "transformtextaction": "",
+                                            "tooltip": ""
+                                          }
+                                        },
+                                        {
+                                          "container": {
+                                            "id": "{40C6D9C6-1188-451F-A86F-27740B46477F}",
+                                            "items": [
+                                              {
+                                                "form image": {
+                                                  "id": "{09880BA8-FFF8-4F25-A89D-E49F6AFD80FD}",
+                                                  "image": {
+                                                    "fieldType": "image",
+                                                    "style": "",
+                                                    "link": "/-/media/Project/Oney-Sites/Apps/Auchan/Icons/icon-bullet.png?customrev=f953d5aa-6625-4ff1-834a-d50557d85bf4",
+                                                    "guid": "{9E0D9DF7-2992-4F46-B837-06B478C9907E}",
+                                                    "value": "icon-bullet",
+                                                    "width": "7",
+                                                    "height": "7",
+                                                    "mimeType": "image/png"
+                                                  },
+                                                  "style": "greenDot"
+                                                }
+                                              },
+                                              {
+                                                "form html text": {
+                                                  "showif": "",
+                                                  "style": "paddingVertical30",
+                                                  "text": "<p><strong>[value]</strong></p>",
+                                                  "textstyle": "",
+                                                  "transformtextaction": "function (ctx) {\r\n    const value = ctx.changePayMethod.getModalitySum(ctx, '_PermanentAccount');\r\n    return ctx.tokensReplacer(ctx.text, {\r\n        value\r\n    });\r\n}",
+                                                  "tooltip": ""
+                                                }
+                                              }
+                                            ],
+                                            "showif": "",
+                                            "style": "flexRow,alignCenter"
+                                          }
+                                        },
+                                        {
+                                          "form html text": {
+                                            "showif": "",
+                                            "style": "privateArea,noPadding",
+                                            "text": "<p>Este valor pode incluir compras e pedidos de financiamento em Reserva Financeira</p>",
+                                            "textstyle": "",
+                                            "transformtextaction": "",
+                                            "tooltip": ""
+                                          }
+                                        }
+                                      ],
+                                      "showif": "",
+                                      "style": "paddingTop30,paddingBottom30"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "form tab container": {
+                                "identifier": "3x-s-juros",
+                                "showif": "",
+                                "style": "",
+                                "items": [
+                                  {
+                                    "container": {
+                                      "id": "{3AA55307-EAE6-4889-8E28-64E98F599EDB}",
+                                      "items": [
+                                        {
+                                          "form html text": {
+                                            "showif": "",
+                                            "style": "privateArea,noPadding",
+                                            "text": "<p>Nesta modalidade, o valor em d&iacute;vida &eacute;:</p>",
+                                            "textstyle": "",
+                                            "transformtextaction": "",
+                                            "tooltip": ""
+                                          }
+                                        },
+                                        {
+                                          "container": {
+                                            "id": "{695EBE79-B4EA-4A4B-9C85-53582FECCA16}",
+                                            "items": [
+                                              {
+                                                "form image": {
+                                                  "id": "{44483A55-157D-4727-BEB7-6775694B7CF3}",
+                                                  "image": {
+                                                    "fieldType": "image",
+                                                    "style": "",
+                                                    "link": "/-/media/Project/Oney-Sites/Apps/Auchan/Icons/icon-bullet.png?customrev=f953d5aa-6625-4ff1-834a-d50557d85bf4",
+                                                    "guid": "{9E0D9DF7-2992-4F46-B837-06B478C9907E}",
+                                                    "value": "icon-bullet",
+                                                    "width": "7",
+                                                    "height": "7",
+                                                    "mimeType": "image/png"
+                                                  },
+                                                  "style": "greenDot"
+                                                }
+                                              },
+                                              {
+                                                "form html text": {
+                                                  "showif": "",
+                                                  "style": "paddingVertical30",
+                                                  "text": "<p><strong>[value]</strong></p>",
+                                                  "textstyle": "",
+                                                  "transformtextaction": "function (ctx) {\r\n    const value = ctx.changePayMethod.getModalitySum(ctx, '_3xNoFees');\r\n    return ctx.tokensReplacer(ctx.text, {\r\n        value\r\n    });\r\n}",
+                                                  "tooltip": ""
+                                                }
+                                              }
+                                            ],
+                                            "showif": "",
+                                            "style": "flexRow,alignCenter"
+                                          }
+                                        }
+                                      ],
+                                      "showif": "",
+                                      "style": "paddingBottom30,paddingTop30"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "form tab container": {
+                                "identifier": "credito-gratuito",
+                                "showif": "",
+                                "style": "",
+                                "items": [
+                                  {
+                                    "container": {
+                                      "id": "{60BB1F78-5B7B-48FE-946D-ECDC4C14CB9B}",
+                                      "items": [
+                                        {
+                                          "form html text": {
+                                            "showif": "",
+                                            "style": "privateArea,noPadding",
+                                            "text": "<p>Nesta modalidade, o valor em d&iacute;vida &eacute;:</p>",
+                                            "textstyle": "",
+                                            "transformtextaction": "",
+                                            "tooltip": ""
+                                          }
+                                        },
+                                        {
+                                          "container": {
+                                            "id": "{76668963-FA1F-4F0D-97B9-0F9F0169D7A8}",
+                                            "items": [
+                                              {
+                                                "form image": {
+                                                  "id": "{C8AE471C-C41F-46EB-83A5-057C05DFD142}",
+                                                  "image": {
+                                                    "fieldType": "image",
+                                                    "style": "",
+                                                    "link": "/-/media/Project/Oney-Sites/Apps/Auchan/Icons/icon-bullet.png?customrev=f953d5aa-6625-4ff1-834a-d50557d85bf4",
+                                                    "guid": "{9E0D9DF7-2992-4F46-B837-06B478C9907E}",
+                                                    "value": "icon-bullet",
+                                                    "width": "7",
+                                                    "height": "7",
+                                                    "mimeType": "image/png"
+                                                  },
+                                                  "style": "greenDot"
+                                                }
+                                              },
+                                              {
+                                                "form html text": {
+                                                  "showif": "",
+                                                  "style": "paddingVertical30",
+                                                  "text": "<p><strong>[value]</strong></p>",
+                                                  "textstyle": "",
+                                                  "transformtextaction": "function (ctx) {\n\tconst value = ctx.changePayMethod.getModalitySum(ctx, '_FreeCredits');\n\treturn ctx.tokensReplacer(ctx.text, {\n\t\tvalue\n\t});\n}",
+                                                  "tooltip": ""
+                                                }
+                                              }
+                                            ],
+                                            "showif": "",
+                                            "style": "flexRow,alignCenter"
+                                          }
+                                        }
+                                      ],
+                                      "showif": "",
+                                      "style": "paddingBottom30,paddingTop30"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "form tab container": {
+                                "identifier": "credito-leve",
+                                "showif": "",
+                                "style": "",
+                                "items": [
+                                  {
+                                    "container": {
+                                      "id": "{D32924AC-51BE-479A-836B-151A97C69D63}",
+                                      "items": [
+                                        {
+                                          "form html text": {
+                                            "showif": "",
+                                            "style": "privateArea,noPadding",
+                                            "text": "<p>Nesta modalidade, o valor em d&iacute;vida &eacute;:</p>",
+                                            "textstyle": "",
+                                            "transformtextaction": "",
+                                            "tooltip": ""
+                                          }
+                                        },
+                                        {
+                                          "container": {
+                                            "id": "{B12EBEAF-45B9-4D10-B63E-2036F3D66D6C}",
+                                            "items": [
+                                              {
+                                                "form image": {
+                                                  "id": "{B8C7C88D-7788-4B76-B226-DDEF7C98790D}",
+                                                  "image": {
+                                                    "fieldType": "image",
+                                                    "style": "",
+                                                    "link": "/-/media/Project/Oney-Sites/Apps/Auchan/Icons/icon-bullet.png?customrev=f953d5aa-6625-4ff1-834a-d50557d85bf4",
+                                                    "guid": "{9E0D9DF7-2992-4F46-B837-06B478C9907E}",
+                                                    "value": "icon-bullet",
+                                                    "width": "7",
+                                                    "height": "7",
+                                                    "mimeType": "image/png"
+                                                  },
+                                                  "style": "greenDot"
+                                                }
+                                              },
+                                              {
+                                                "form html text": {
+                                                  "showif": "",
+                                                  "style": "paddingVertical30",
+                                                  "text": "<p><strong>[value]</strong></p>",
+                                                  "textstyle": "",
+                                                  "transformtextaction": "function (ctx) {\n\tconst value = ctx.changePayMethod.getModalitySum(ctx, '_LightCredits');\n\treturn ctx.tokensReplacer(ctx.text, {\n\t\tvalue\n\t});\n}",
+                                                  "tooltip": ""
+                                                }
+                                              }
+                                            ],
+                                            "showif": "",
+                                            "style": "flexRow,alignCenter"
+                                          }
+                                        }
+                                      ],
+                                      "showif": "",
+                                      "style": "paddingBottom30,paddingTop30"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "showif": "",
+                          "style": ""
+                        }
+                      },
+                      {
+                        "container": {
+                          "id": "{DF8F4515-C7C7-4B11-9947-923F667071D9}",
+                          "items": [
+                            {
+                              "form text": {
+                                "showif": "",
+                                "style": "fontSize18,bold,textColorGrey6f,marginBottom30",
+                                "text": "Altere a modalidade de pagamento das suas compras:",
+                                "tooltip": ""
+                              }
+                            },
+                            {
+                              "data table": {
+                                "checkboxstyle": "",
+                                "checkboxwidth": "100",
+                                "fields": [
+                                  {
+                                    "data table column": {
+                                      "title": "Data",
+                                      "titleicon": {
+                                        "fieldType": "image",
+                                        "style": "",
+                                        "link": ""
+                                      },
+                                      "clickaction": "",
+                                      "columnwidth": "",
+                                      "containerstyle": "",
+                                      "image": {
+                                        "fieldType": "image",
+                                        "style": "",
+                                        "link": ""
+                                      },
+                                      "imagestyle": "",
+                                      "imagestylefunction": "",
+                                      "issuffiximage": "",
+                                      "style": "",
+                                      "valueaction": "function (ctx) {\r\n    return ctx.parseStringDate(ctx._row.date,  'yyyy-MM-dd', 'dd-MM-yy')\r\n}",
+                                      "valuepath": "",
+                                      "valuestyle": "grey6ftext",
+                                      "valuestylefunction": ""
+                                    }
+                                  },
+                                  {
+                                    "data table column": {
+                                      "title": "Montante",
+                                      "titleicon": {
+                                        "fieldType": "image",
+                                        "style": "",
+                                        "link": ""
+                                      },
+                                      "clickaction": "",
+                                      "columnwidth": "200",
+                                      "containerstyle": "",
+                                      "image": {
+                                        "fieldType": "image",
+                                        "style": "",
+                                        "link": ""
+                                      },
+                                      "imagestyle": "",
+                                      "imagestylefunction": "",
+                                      "issuffiximage": "",
+                                      "style": "",
+                                      "valueaction": "function (ctx) {\r\n\treturn ctx.formatMoney(ctx._row.creditAmount);\r\n}",
+                                      "valuepath": "",
+                                      "valuestyle": "grey6ftext",
+                                      "valuestylefunction": ""
+                                    }
+                                  },
+                                  {
+                                    "data table column": {
+                                      "title": "Modalidade atual",
+                                      "titleicon": {
+                                        "fieldType": "image",
+                                        "style": "",
+                                        "link": ""
+                                      },
+                                      "clickaction": "",
+                                      "columnwidth": "250",
+                                      "containerstyle": "",
+                                      "image": {
+                                        "fieldType": "image",
+                                        "style": "",
+                                        "link": ""
+                                      },
+                                      "imagestyle": "",
+                                      "imagestylefunction": "",
+                                      "issuffiximage": "",
+                                      "style": "",
+                                      "valueaction": "",
+                                      "valuepath": "movementType.name",
+                                      "valuestyle": "grey6ftext",
+                                      "valuestylefunction": ""
+                                    }
+                                  },
+                                  {
+                                    "data table column": {
+                                      "title": "Modalidade pretendida",
+                                      "titleicon": {
+                                        "fieldType": "image",
+                                        "style": "",
+                                        "link": "/-/media/Project/Oney-Sites/Apps/Auchan/Icons/alterar_modalidade_pagamento.png?customrev=21f87dcf-291e-4d63-b8f5-ca0e46c30b03",
+                                        "guid": "{0AD3A00D-0599-409B-8552-7F944DC17080}",
+                                        "value": "alterar_modalidade_pagamento",
+                                        "width": "22",
+                                        "height": "21",
+                                        "mimeType": "image/png"
+                                      },
+                                      "clickaction": "",
+                                      "columnwidth": "",
+                                      "containerstyle": "greyContainer",
+                                      "image": {
+                                        "fieldType": "image",
+                                        "style": "",
+                                        "link": ""
+                                      },
+                                      "imagestyle": "",
+                                      "imagestylefunction": "",
+                                      "issuffiximage": "",
+                                      "style": "greenTitle,title",
+                                      "valueaction": "function(ctx) {\r\n    return 'Conta Permanente';\r\n}",
+                                      "valuepath": "",
+                                      "valuestyle": "grey6ftext",
+                                      "valuestylefunction": ""
+                                    }
+                                  }
+                                ],
+                                "identifier": "purchases",
+                                "no results": "",
+                                "oncheckrowaction": "function(ctx) {\r\n    ctx.changePayMethod.onPurchasesTableItemChecked(ctx);\r\n}",
+                                "outer separator hidden": "",
+                                "row click action": "",
+                                "row style": "",
+                                "rowcheckenabled": "1",
+                                "separator style": "separatorMargin10",
+                                "style": ""
+                              }
+                            },
+                            {
+                              "container": {
+                                "id": "{313F449A-217D-47C6-8042-CEBABD8A83A1}",
+                                "items": [
+                                  {
+                                    "form label value": {
+                                      "label": "Valor",
+                                      "style": "width255,noPadding,ampValue,bold,alignCenter",
+                                      "value action": "function(ctx) {\n    const value = ctx.changePayMethod.getCheckedSum(ctx);\n    return ctx.utils.formatMoney(value) + '€';\n}",
+                                      "value path": "",
+                                      "showif": ""
+                                    }
+                                  }
+                                ],
+                                "showif": "",
+                                "style": "justifyEnd,flexRow"
+                              }
+                            }
+                          ],
+                          "showif": "",
+                          "style": "marginTop30"
+                        }
+                      },
+                      {
+                        "container": {
+                          "id": "{EA6F5F38-BE03-47E2-8C1E-D49872FDACEB}",
+                          "items": [
+                            {
+                              "form button": {
+                                "action": "function(ctx) {\r\n    ctx._form.changeMethod(ctx);\r\n}",
+                                "activeif": "",
+                                "image": {
+                                  "fieldType": "image",
+                                  "style": "",
+                                  "link": ""
+                                },
+                                "style": "primary,smallButton,noMarginHorizontal",
+                                "fieldname": "AlterarModalidade",
+                                "label": "Alterar Modalidade"
+                              }
+                            }
+                          ],
+                          "showif": "",
+                          "style": "justifyEnd,flexRow"
+                        }
+                      },
+                      {
+                        "container": {
+                          "id": "{BAFD3FA2-0048-4468-9FF4-F1617036F4E0}",
+                          "items": [
+                            {
+                              "form html text": {
+                                "showif": "",
+                                "style": "noPadding,privateAreaMedium",
+                                "text": "<p>Caso pretenda mais informa&ccedil;&otilde;es sobre outras modalidades, <a href=\"/-/media/Project/Oney-Sites/Apps/Auchan/PDF/Apoio-ao-Cliente.pdf?customrev=d9c82d15-ba3c-4e01-be23-0c20b3a6e2d4\">contacte-nos.</a></p>",
+                                "textstyle": "",
+                                "transformtextaction": "",
+                                "tooltip": ""
+                              }
+                            }
+                          ],
+                          "showif": "",
+                          "style": ""
+                        }
+                      },
+                      {
+                        "container": {
+                          "id": "{7B83E150-6E22-4D75-BCA7-D8CBA711CE66}",
+                          "items": [
+                            {
+                              "form text": {
+                                "showif": "",
+                                "style": "fontSize16,textColorGrey6f,marginTop30",
+                                "text": "Caso pretenda mais informações sobre outras modalidades, contacte-nos através do email apoiocliente@oney.pt",
+                                "tooltip": ""
+                              }
+                            }
+                          ],
+                          "showif": "",
+                          "style": "formContainerRow"
+                        }
+                      }
+                    ],
+                    "showif": "function(ctx) {\r\n    return !!(ctx.changePayMethod.getFieldValue('_DATA_FETCHED_') && ctx.page.data.purchases && ctx.page.data.purchases.length);\r\n}",
+                    "style": ""
+                  }
+                }
+              ],
+              "showif": "",
+              "style": "privateAreaContainer"
+            }
+          }
+        ],
+        "submitaction": ""
+      },
+      "components": [
+        {
+          "name": "Container",
+          "type": "Component",
+          "showIf": "",
+          "bgImage": "",
+          "identifier": null,
+          "style": "",
+          "path": "/app-body/sxa-scrollview/app-main/row-1-2/formbottomcontent-2-",
+          "contents": ""
+        }
+      ]
+    },
+    {
+      "name": "Container",
+      "type": "Component",
+      "showIf": "",
+      "bgImage": "",
+      "identifier": null,
+      "style": "",
+      "path": "/app-body/sxa-scrollview/app-main/row-2-2",
+      "contents": "",
+      "components": [
+        {
+          "name": "Container",
+          "type": "Component",
+          "showIf": "",
+          "bgImage": "",
+          "identifier": null,
+          "style": "privateAreaContainer",
+          "path": "/app-body/sxa-scrollview/app-main/row-2-2/container/row-1-3",
+          "contents": "",
+          "components": [
+            {
+              "name": "Widgets Container",
+              "type": "Component",
+              "showIf": "",
+              "bgImage": "",
+              "identifier": null,
+              "style": "",
+              "path": "/app-body/sxa-scrollview/app-main/row-2-2/container/row-1-3/container",
+              "contents": {
+                "container": {
+                  "id": "{2124E4D8-C23D-4A12-BE60-FC5C17D780E4}",
+                  "items": [
+                    {
+                      "container": {
+                        "id": "{B4E5F4A8-0123-4999-9A79-859DBB57D1E6}",
+                        "items": [
+                          {
+                            "collapsable content": {
+                              "iconbeforetext": "",
+                              "title": "CONSUMO POR MODALIDADES",
+                              "tooltip": "O valor que ganha em cada compra fica dispon&iacute;vel para descontar em compras futuras na Rede Auchan - s&oacute; tem de escolher a modalidade de pagamento \"Conta B&oacute;nus\"",
+                              "id": "{33017BBF-0558-4A14-AC62-E6C1A955EF08}",
+                              "image": {
+                                "fieldType": "image",
+                                "style": "",
+                                "link": "/-/media/Project/Oney-Sites/Apps/Auchan/Icons/arrow-down.png?customrev=c8d6fa15-7fd8-4986-afd4-918bfc9d6191",
+                                "guid": "{E621D34B-7281-4DF7-868D-1B56B761CD1E}",
+                                "value": "arrow down",
+                                "width": "40",
+                                "height": "40",
+                                "mimeType": "image/png"
+                              },
+                              "activeimage": {
+                                "fieldType": "image",
+                                "style": "",
+                                "link": "/-/media/Project/Oney-Sites/Apps/Auchan/Icons/arrow-up.png?customrev=e9cc3a99-c623-43f7-a56b-32361b35fadc",
+                                "guid": "{B1AB4AB4-1E11-4A81-B116-D7F8F9FC5B5B}",
+                                "value": "arrow up",
+                                "width": "40",
+                                "height": "40",
+                                "mimeType": "image/png"
+                              },
+                              "text": "",
+                              "style": "collapsableContentBtn",
+                              "items": [
+                                {
+                                  "text": {
+                                    "id": "{CA577CF3-9007-4CE2-BE14-C4D1F8A2C7A7}",
+                                    "showif": "",
+                                    "style": "marginBottom30,marginTop20,textColorGrey6f,fontSize16",
+                                    "text": "Consulte os seus consumos em cada modalidade de pagamento, até ao momento."
+                                  }
+                                },
+                                {
+                                  "container": {
+                                    "id": "{E495BBCC-CFBB-42B2-9D44-A9F2E9CEBF9B}",
+                                    "items": [
+                                      {
+                                        "container": {
+                                          "id": "{5D712007-F924-403C-99B4-1E0ABA2F9798}",
+                                          "items": [
+                                            {
+                                              "label value field": {
+                                                "id": "{EBF5CDF5-9962-41C2-8886-E8A3DBAA27D4}",
+                                                "label": "Fim do mês",
+                                                "labeltooltip": "",
+                                                "style": "flexDirectionColumn,noPadding,negativeColor,bold,fontSize18,height75",
+                                                "tooltip": "",
+                                                "value action": "function(ctx){\r\n    return  ctx.formatMoney(ctx.user.getActiveContract().financialReservation.endOfMonth);\r\n} ",
+                                                "value path": "",
+                                                "value style function": "",
+                                                "showif": ""
+                                              }
+                                            }
+                                          ],
+                                          "showif": "",
+                                          "style": "sectionSeparatorChangePayment,changePaymentContainer,noPaddingLeft,width165"
+                                        }
+                                      },
+                                      {
+                                        "container": {
+                                          "id": "{D8074CC5-1EC7-4FC0-A85E-6F54E4D4919B}",
+                                          "items": [
+                                            {
+                                              "label value field": {
+                                                "id": "{18724EDC-DC54-41AF-8625-C207E5E582D3}",
+                                                "label": "Compras em parcelas: com e sem juros",
+                                                "labeltooltip": "",
+                                                "style": "flexDirectionColumn,noPadding,negativeColor,bold,fontSize18,height75",
+                                                "tooltip": "",
+                                                "value action": "function(ctx){\r\n    return  ctx.formatMoney(ctx.user.getActiveContract().financialReservation.nxCSJuros);\r\n} ",
+                                                "value path": "",
+                                                "value style function": "",
+                                                "showif": ""
+                                              }
+                                            }
+                                          ],
+                                          "showif": "",
+                                          "style": "sectionSeparatorChangePayment,changePaymentContainer,width230"
+                                        }
+                                      },
+                                      {
+                                        "container": {
+                                          "id": "{DDC47D61-4349-4001-954F-E68DC5A3EA08}",
+                                          "items": [
+                                            {
+                                              "label value field": {
+                                                "id": "{B0C27C58-4236-4728-882A-F5E6A32C84CE}",
+                                                "label": "Conta Permanente",
+                                                "labeltooltip": "",
+                                                "style": "flexDirectionColumn,noPadding,negativeColor,bold,fontSize18,height75",
+                                                "tooltip": "",
+                                                "value action": "function(ctx){\r\n     return  ctx.formatMoney(ctx.user.getActiveContract().financialReservation.permanentAccount);\r\n} ",
+                                                "value path": "",
+                                                "value style function": "",
+                                                "showif": ""
+                                              }
+                                            }
+                                          ],
+                                          "showif": "",
+                                          "style": "sectionSeparatorChangePayment,changePaymentContainer,width230"
+                                        }
+                                      },
+                                      {
+                                        "container": {
+                                          "id": "{DD360D34-E8EB-454A-903E-BE57FEB6CC36}",
+                                          "items": [
+                                            {
+                                              "label value field": {
+                                                "id": "{ACA7613F-FAED-416A-B8DB-BD15C6287EE9}",
+                                                "label": "Débito Diferido",
+                                                "labeltooltip": "",
+                                                "style": "flexDirectionColumn,noPadding,negativeColor,bold,fontSize18,height75",
+                                                "tooltip": "",
+                                                "value action": "function(ctx){\r\n     return  ctx.formatMoney(ctx.user.getActiveContract().financialReservation.pai);\r\n} ",
+                                                "value path": "",
+                                                "value style function": "",
+                                                "showif": ""
+                                              }
+                                            }
+                                          ],
+                                          "showif": "",
+                                          "style": "sectionSeparatorChangePayment,noBorder,changePaymentContainer"
+                                        }
+                                      }
+                                    ],
+                                    "showif": "",
+                                    "style": "flexRow,marginTop40"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ],
+                        "showif": "",
+                        "style": ""
+                      }
+                    }
+                  ],
+                  "showif": "",
+                  "style": ""
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Container",
+          "type": "Component",
+          "showIf": "",
+          "bgImage": "",
+          "identifier": null,
+          "style": "privateAreaContainer",
+          "path": "/app-body/sxa-scrollview/app-main/row-2-2/container/row-2-3",
+          "contents": "",
+          "components": [
+            {
+              "name": "Widgets Container",
+              "type": "Component",
+              "showIf": "",
+              "bgImage": "",
+              "identifier": null,
+              "style": "",
+              "path": "/app-body/sxa-scrollview/app-main/row-2-2/container/row-2-3/container",
+              "contents": {
+                "container": {
+                  "id": "{CD18B383-B732-4656-A3A9-7DF71EBE61CB}",
+                  "items": [
+                    {
+                      "container": {
+                        "id": "{35D1124F-053A-48F6-98CD-3223BDCC48F0}",
+                        "items": [
+                          {
+                            "collapsable content": {
+                              "iconbeforetext": "",
+                              "title": "OPÇÃO DE PAGAMENTO DA CONTA PERMANENTE",
+                              "tooltip": "",
+                              "id": "{84668E9F-282F-4938-B407-49F3D534AD11}",
+                              "image": {
+                                "fieldType": "image",
+                                "style": "",
+                                "link": "/-/media/Project/Oney-Sites/Apps/Auchan/Icons/arrow-down.png?customrev=c8d6fa15-7fd8-4986-afd4-918bfc9d6191",
+                                "guid": "{E621D34B-7281-4DF7-868D-1B56B761CD1E}",
+                                "value": "arrow down",
+                                "width": "40",
+                                "height": "40",
+                                "mimeType": "image/png"
+                              },
+                              "activeimage": {
+                                "fieldType": "image",
+                                "style": "",
+                                "link": "/-/media/Project/Oney-Sites/Apps/Auchan/Icons/arrow-up.png?customrev=e9cc3a99-c623-43f7-a56b-32361b35fadc",
+                                "guid": "{B1AB4AB4-1E11-4A81-B116-D7F8F9FC5B5B}",
+                                "value": "arrow up",
+                                "width": "40",
+                                "height": "40",
+                                "mimeType": "image/png"
+                              },
+                              "text": "",
+                              "style": "collapsableContentBtn",
+                              "items": [
+                                {
+                                  "text": {
+                                    "id": "{97E21B3B-DE0E-4738-B0CA-35B408D9638F}",
+                                    "showif": "",
+                                    "style": "marginBottom30,marginTop20,textColorGrey6f,fontSize16",
+                                    "text": "Todas as compras que alterar para Conta Permanente são pagas na opção:"
+                                  }
+                                },
+                                {
+                                  "text": {
+                                    "id": "{3223E0C9-C0AE-4D85-9842-BE79B4F6950D}",
+                                    "showif": "",
+                                    "style": "bold,fontSize18,textColorGrey6f",
+                                    "text": "Valor Variável: 10%"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ],
+                        "showif": "",
+                        "style": ""
+                      }
+                    }
+                  ],
+                  "showif": "",
+                  "style": ""
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
